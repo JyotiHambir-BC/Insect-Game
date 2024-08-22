@@ -52,6 +52,7 @@ h1 {
 
 .screen.up {
     margin-top: -100vh;
+    transition: margin 0.5s ease-out;
 }
 
 .insect-list {
