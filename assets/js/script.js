@@ -9,6 +9,7 @@ const message = document.getElementById("message");
 let seconds = 0;
 let score = 0;
 let selected_insect = {};
+let intervalId;
 
 start_btn.addEventListener("click", () => screens[0].classList.add("up"));
 choose_insect_btns.forEach(btn => {
@@ -24,17 +25,26 @@ choose_insect_btns.forEach(btn => {
 });
 
 function startGame() {
-    setInterval(increaseTime, 1000);
+    intervalId = setInterval(increaseTime, 1000);
 }
 
 function increaseTime() {
+    
     let m = Math.floor(seconds / 60);
     let s = seconds % 60;
-
+    if(s < 5 )//|| m < 1 || (m==1 && s<1))
+        {
     m = m < 10 ? `0${m}` : m;
     s = s < 10 ? `0${s}` : s;
-    timeEl.innerHTML = `Time${m}:${s}`;
+    timeEl.innerHTML = `Time ${m}:${s}`;
     seconds++;
+    }
+    else
+    {
+        screens[2].classList.add("up");
+        document.getElementById("finalscoretxt").innerHTML = document.getElementById("finalscoretxt1").innerHTML + `${score}`;
+        clearInterval(intervalId);
+    }
 }
 
 function createInsect() {
@@ -65,8 +75,12 @@ function addInsect() {
 
 function increaseScore() {
     score++;
-    if (score > 19) {
+    if (score == 19) {
         message.classList.add("visible");
+    }
+    if(score == 20)
+    {
+        message.classList.remove("visible");
     }
     scoreEl.innerHTML = `Score: ${score}`;
 }
