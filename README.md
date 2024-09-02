@@ -19,10 +19,11 @@ Insect Game made for people for whom like to play something interesting and neve
       - ![Game-page](assets/documents/insect-selection.png)
       - ![Game-page](assets/documents/insect-selection1.png)
       - ![Game-page](assets/documents/insect-selection2.png)
+      - ![Game-page](assets/documents/restart-page.png)
 
 
   - ### Features which could be implemented in future
-    - Currently the game runs continuously, there is no time limit.. In future I am going to set time limit for the game
+    - Can be added more insect and features (e.g Previous Best Score) to make the game more creative.
 
 
   - ## Design
@@ -52,7 +53,7 @@ Insect Game made for people for whom like to play something interesting and neve
     The live link can be found here - [Insect Game](https://jyotihambir-bc.github.io/Insect-Game/)
 
   - ### Code
-    - App Idea and code idea was taken from []()
+    - Took the help from ChatGPT and Stack Overflow.
     
 
  
